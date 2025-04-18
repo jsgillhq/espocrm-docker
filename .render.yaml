@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: espocrm
+    env: docker
+    plan: free
+    autoDeploy: true
+    region: oregon
+    disk:
+      name: espocrm-data
+      mountPath: /var/www/html
+      sizeGB: 1
+    envVars:
+      - key: DB_NAME
+        value: espocrm
+      - key: DB_USER
+        value: espouser
+      - key: DB_PASSWORD
+        value: changeThisPassword
+      - key: DB_ROOT_PASSWORD
+        value: changeRootPassword
